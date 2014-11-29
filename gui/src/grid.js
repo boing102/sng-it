@@ -23,8 +23,7 @@ function grid(services){
                         
             block.find(".detailLink").click(function(){
                 
-                if(services.myStatusGetter()===1){
-                    
+                if(services.myStatusGetter()===3){
                     
                     popupDetail.find(".card-url").attr("src",cards[i].url);
                     popupDetail.find(".card-title").text(cards[i].title);
@@ -35,12 +34,12 @@ function grid(services){
                     popupDetail.popup("open");
                     
                     popupDetail.find(".card-choose-btn").click(function(){
-                        if(services.myStatusGetter()===1){
+                        if(services.myStatusGetter()===3 && services.isStorySaidGetter()){
                             if(!detailLink.hasClass("active")){
                                detailLink.addClass("active");
                             }
                             popupDetail.popup("close");
-                            services.statusSetter(2);
+                            services.statusSetter(4);
                         }
                     });
                     
@@ -56,13 +55,23 @@ function grid(services){
     
     function render(){
 
-        if(services.myStatusGetter()===0){
+        if(services.myStatusGetter()===-1){
             cards = getDefaultCards();
         }
-        if(services.myStatusGetter()===1){
+        if(services.myStatusGetter()===0){
             cards = getMyCards();
         }
-
+        if(services.myStatusGetter()===1 || services.myStatusGetter()===3){
+            cards = getMyCards();
+        }
+        if(services.myStatusGetter()===3){
+            if(!services.isStorySaidGetter()){
+                popupDetail.find(".card-choose-btn").hide();    
+            }else{
+                popupDetail.find(".card-choose-btn").show();    
+            }
+            
+        }
         
         
         if(services.nameGetter()==="" || services.myStatusGetter()===-1){

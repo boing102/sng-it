@@ -7,8 +7,18 @@
 
 function players(services){
     
+    var rootDiv = $("#sng-players");
     
     function render(){
+        
+        
+        
+        
+        if(services.nameGetter()==="" || services.myStatusGetter()===-1){
+            rootDiv.hide();
+        }else{
+            rootDiv.show();
+        }
         
     }
     

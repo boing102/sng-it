@@ -3,6 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+
+ $(window).resize(function() {
+                columnConform();
+               });
+
+$(document).ready(function() {
+ columnConform();
+});
+        
+
 window.onload= sngit;
 function sngit(){
 
@@ -10,6 +22,9 @@ function sngit(){
     var name="";
     
     var services = {
+        
+      
+        
         statusGetter: function(){
             return statuses;
         },

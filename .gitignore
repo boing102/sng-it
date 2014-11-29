@@ -4,3 +4,6 @@
 .idea
 .settings/
 target/
+gui/dist
+gui/nbproject
+gui/node_modules

@@ -1,0 +1,17 @@
+{
+  "name": "sng-it",
+  "version": "0.1.0",
+  "src":"src",
+  "dest":"dist",
+  "private":true,
+  "description": "SNG game",
+  "keywords": ["game","sng"],
+  "license": "AGPLv3",
+  "author": ["Silvia Macejkova","Martin Mekota","Tomas Matula","Pavol Kulich","Maros Mracna","Miroslav Bimbo"],
+  "contributors": [],
+  "dependencies": {},
+  "devDependencies": {
+    "jquery" : "~2.1.1",
+    "jquery-mobile" : "~1.4.1"
+  }
+}

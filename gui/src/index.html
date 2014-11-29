@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="/lib/jquery.mobile.css" />
+        <script src="/lib/jquery.js"></script>
+        <script src="/lib/jquery.mobile.js"></script>
+        <script src="header.js"></script>
+        <script src="grid.js"></script>
+        <script src="login.js"></script>
+        <script src="players.js"></script>
+        <script src="sngit.js"></script>
+        <style>
+            .grid-photo{
+                width: 70%;
+            }
+           
+            .infoIcon{
+                width: 20px;
+                position: absolute;
+                top:20px;
+            }
+            
+            .detailLink.ui-link.active, .detailLink.ui-link.active:hover{
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div data-role="page">
+
+            <div data-role="header">
+                <h1 id="sng-title"></h1>
+            </div>
+
+            <div role="main" class="ui-content">
+                <div id="sng-login" class="ui-grid-a grids">
+                    <form id="sng-login-form">
+                        <label for="basic">Zadaj svoje meno:</label>
+                        <input type="text" id="login-name" name="login-name"/>
+                        <input type="submit" value="Prihlás sa">
+                    </form>
+                </div>
+                
+                <div id="sng-grid" class="ui-grid-b grids" style="display:none">
+                    <div id="block0" class="ui-block-a">
+                        <div class="ui-bar ui-bar-a" style="">
+                            <a class="detailLink" href="javascript:void(0)" data-rel="popup" data-position-to="window" data-transition="fade">
+                                <img id="img1" class="popphoto grid-photo" src="img/defaultCard.png" alt=""/>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="block1" class="ui-block-b">
+                        <div class="ui-bar ui-bar-a">
+                            <a class="detailLink" href="javascript:void(0)" data-rel="popup" data-position-to="window" data-transition="fade">
+                                <img id="img2" class="popphoto grid-photo" src="img/defaultCard.png" />
+                            </a>
+                        </div></div>
+                    <div id="block2" class="ui-block-c">
+                        <div class="ui-bar ui-bar-a">
+                            <a class="detailLink" href="javascript:void(0)" data-rel="popup" data-position-to="window" data-transition="fade">
+                                <img id="img3" class="popphoto grid-photo" src="img/defaultCard.png"  />
+                            </a>
+                        </div>
+                    </div>
+                    <div id="block3" class="ui-block-a">
+                        <div class="ui-bar ui-bar-a" style="">
+                            <a class="detailLink" href="javascript:void(0)" data-rel="popup" data-position-to="window" data-transition="fade">
+<!--                                Detail
+                            </a>
+                            <a class="imageLink">-->
+                                <img  id="img4" class="popphoto grid-photo" src="img/defaultCard.png" />
+                            </a>
+                        </div>
+                    </div>
+                    <div id="block4" class="ui-block-b">
+                        <div class="ui-bar ui-bar-a">
+                            <a class="detailLink" href="javascript:void(0)" data-rel="popup" data-position-to="window" data-transition="fade">
+                                <img id="img5" class="popphoto grid-photo" src="img/defaultCard.png"  />
+                            </a>
+                        </div></div>
+                    <div id="block5" class="ui-block-c">
+                        <div class="ui-bar ui-bar-a">
+                            <a class="detailLink" href="javascript:void(0)" data-rel="popup" data-position-to="window" data-transition="fade">
+                                <img  id="img6" class="popphoto grid-photo" src="img/defaultCard.png"  />
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div id="popupDetail" data-role="popup" data-tolerance="300,150" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                        <img class="popphoto card-url" src="http://www.webumenia.sk/oai-pmh/getimage/SVK:SNG.G_434" alt="">
+                        <a href="#" class="ui-btn card-choose-btn">Vybrať túto kartu</a>
+                        <p>Meno diela: <span class="card-title">Výstava v Paríži</span></p>
+                        <p>Autor: <span class="card-creator">Fulla, Ľudovít</span></p>
+                        <p>Dátum vzniku: <span class="card-created">1938/1938</span></p>
+                        <p>Formát: <span class="card-format">drevorez, farebnýneznačené</span></p>
+                    </div>
+                      
+                    
+                </div>
+                
+                <div id="sng-players-me" class="ui-grid-b grids" >
+                    
+                    <div id="playerMe" class="ui-block-a">
+                        Bimbo
+                    </div>
+                    <div id="infos" class="ui-block-a">
+                        Infos
+                    </div>
+                    
+                </div>
+                <div id="sng-players" class="ui-grid-d grids" >
+                    
+                    <div id="player0" class="ui-block-a">
+                        Mrc
+                    </div>
+                    <div id="player1" class="ui-block-b">
+                        Palo
+                    </div>
+                    <div id="player2" class="ui-block-c">
+                        Silvinka
+                    </div>
+                    <div id="player3" class="ui-block-d">
+                        Martin
+                    </div>
+                    <div id="player4" class="ui-block-e">
+                        Tomas
+                    </div>
+                </div>
+
+
+                
+            </div>
+            
+            <div data-role="footer">
+                <h4>Page Footer</h4>
+            </div>
+        </div>
+        
+    </body>
+</html>

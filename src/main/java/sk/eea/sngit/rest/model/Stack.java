@@ -19,7 +19,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "stack")
-class Stack {
+public class Stack {
     
     @Id
     private long stackId;

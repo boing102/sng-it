@@ -17,13 +17,13 @@ function grid(services){
         (function(i){
             var block = $("#block"+i);
             var bar = block.find(".ui-bar");
-            var detailLink = block.find(".detailLink");
+            
             
             //SETUP GRID BEHAVIOUR BASED ON CURRENT STATUS 
                         
             block.find(".detailLink").click(function(){
                 
-                if(services.myStatusGetter()===3){
+                if(services.myStatusGetter()===0 || services.myStatusGetter()===3 || services.myStatusGetter()===4 ){
                     
                     popupDetail.find(".card-url").attr("src",cards[i].url);
                     popupDetail.find(".card-title").text(cards[i].title);
@@ -34,6 +34,7 @@ function grid(services){
                     popupDetail.popup("open");
                     
                     popupDetail.find(".card-choose-btn").click(function(){
+                        var detailLink = block.find(".detailLink");
                         if(services.myStatusGetter()===3 && services.isStorySaidGetter()){
                             if(!detailLink.hasClass("active")){
                                detailLink.addClass("active");
@@ -42,7 +43,6 @@ function grid(services){
                             services.statusSetter(4);
                         }
                     });
-                    
                     
                 }
             
@@ -60,6 +60,7 @@ function grid(services){
         }
         if(services.myStatusGetter()===0){
             cards = getMyCards();
+            popupDetail.find(".card-choose-btn").hide();  
         }
         if(services.myStatusGetter()===1 || services.myStatusGetter()===3){
             cards = getMyCards();
@@ -69,8 +70,13 @@ function grid(services){
                 popupDetail.find(".card-choose-btn").hide();    
             }else{
                 popupDetail.find(".card-choose-btn").show();    
-            }
-            
+            }    
+        }
+        if(services.myStatusGetter()===4){
+            popupDetail.find(".card-choose-btn").hide();    
+        }
+        if(services.myStatusGetter()===5){
+            cards = getOthersCards();
         }
         
         
@@ -82,12 +88,59 @@ function grid(services){
         
         for(var i=0;i<6;i++){
             $("#img"+(i+1)).attr("src",cards[i].url);
-            popupDetail.popup("close");
+//            popupDetail.popup("close");
         }
         
 
     }
     
+ 
+    
+    function getOthersCards(){
+        return [{
+            "url":"http://webumenia.sk/cedvuweb/image/SVK_OGD.O_1711.jpeg?id=SVK:OGD.O_1711",
+            "title":"Výstava v Paríži",
+            "creator":"Fulla, Ľudovít",
+            "created":"1938/1938",
+            "format":"drevorez, farebný"
+        },
+        {
+            "url":"http://webumenia.sk/cedvuweb/image/SVK_OGD.O_1711.jpeg?id=SVK:OGD.O_1711",
+            "title":"2",
+            "creator":"Fulla, Ľudovít",
+            "created":"1938/1938",
+            "format":"drevorez, farebný"
+        },
+        {
+            "url":"http://webumenia.sk/cedvuweb/image/SVK_OGD.O_1711.jpeg?id=SVK:OGD.O_1711",
+            "title":"3i",
+            "creator":"Fulla, Ľudovít",
+            "created":"1938/1938",
+            "format":"drevorez, farebný"
+        },
+        {
+            "url":"http://webumenia.sk/cedvuweb/image/SVK_OGD.O_1711.jpeg?id=SVK:OGD.O_1711",
+            "title":"4",
+            "creator":"Fulla, Ľudovít",
+            "created":"1938/1938",
+            "format":"drevorez, farebný"
+        },
+        {
+            "url":"http://webumenia.sk/cedvuweb/image/SVK_OGD.K_1177.jpeg?id=SVK:OGD.K_1177",
+            "title":"5",
+            "creator":"Fulla, Ľudovít",
+            "created":"1938/1938",
+            "format":"drevorez, farebný"
+        },
+        {
+            "url":"http://webumenia.sk/cedvuweb/image/SVK_OGD.O_1711.jpeg?id=SVK:OGD.O_1711",
+            "title":"6",
+            "creator":"Fulla, Ľudovít",
+            "created":"1938/1938",
+            "format":"drevorez, farebný"
+        }];
+        
+    }
     
     
      function getMyCards(){

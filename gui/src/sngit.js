@@ -6,33 +6,30 @@
 
 
 
- $(window).resize(function() {
-                columnConform();
-               });
-
-$(document).ready(function() {
- columnConform();
-});
-        
-
 window.onload= sngit;
 function sngit(){
 
     var statuses = {Mrco:-1,Silvinka:-1,Palo:-1,Martin:-1,Tomas:-1,Bimbo:-1};
     var newStatus = {Mrco:0,Silvinka:0,Palo:0,Martin:0,Tomas:0,Bimbo:0};
-    var story = "";
+    var story = "Dobrý pocit z dobre vykonanej práce";
     var name="";
     
     
     //MOCKS
     setTimeout(function(){
-        newStatus = {Mrco:6,Silvinka:3,Palo:3,Martin:3,Tomas:3,Bimbo:3};
-    }, 15000);
-    
-    
-    setTimeout(function(){
         newStatus = {Mrco:1,Silvinka:3,Palo:3,Martin:3,Tomas:3,Bimbo:3};
     }, 4000);
+    
+    setTimeout(function(){
+        newStatus = {Mrco:6,Silvinka:3,Palo:3,Martin:3,Tomas:3,Bimbo:3};
+    }, 6000);
+    
+    
+    setInterval(function(){
+        if(statuses[name]===4){
+            newStatus = {Mrco:6,Silvinka:5,Palo:5,Martin:5,Tomas:5,Bimbo:5};
+        }
+    }, 10000);
     
     function isStorySaid(stats){
         for(var propertyName in stats) {
@@ -47,6 +44,9 @@ function sngit(){
         
         isStorySaidGetter: function(){
             return isStorySaid(statuses);
+        },
+        storyGetter: function(){
+            return story;
         },
         statusGetter: function(){
             return statuses;

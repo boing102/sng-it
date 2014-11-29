@@ -13,36 +13,33 @@ function description(services){
         if(services.nameGetter()==="" || services.myStatusGetter()===-1){
             rootDir.text("Prihlásenie do hry");
         }else if(services.myStatusGetter()===0){
-            rootDir.text("Čakaj na súperov");
+            rootDir.text("Kým čakáš na prihlásenie tvojich spoluhráčov, môžeš si prečítať niečo viac o kartách - umeleckých dielach, ktoré ti boli pridelené. Stačí na nich kliknúť.");
         }
         else if(services.myStatusGetter()===1){
-            rootDir.text("Vyber kartu, podľa ktorej popisu sa bude hádať");
+            rootDir.text("Vyber si umelecké dielo, ktoré ťa najviac oslovilo a vieš ho jednoducho a výstižne opísať tak, aby ho tvoji spoluhráči spoznali.");
         }
         else if(services.myStatusGetter()===2){
-            rootDir.text("Popíš vybranú kartu");
+            rootDir.text("Napíš jednoduchý popis k vybranému obrázku (max. 160 znakov)");
         }
         else if(services.myStatusGetter()===3){
             if(!services.isStorySaidGetter()){
-                rootDir.text("Čakaj na rozprávača");    
+                rootDir.text("Kým čakáš na popis karty od rozprávača, môžeš si prečítať niečo viac o kartách - umeleckých dielach, ktoré ti boli pridelené. Stačí na nich kliknúť.");    
             }else{
-                rootDir.text("Vyber si svoju kartu!");
+                rootDir.text("Vyber zo svojich kariet tú, ktorá sa najviac hodí k zadanému opisu: ");
+                $("<b></b>").appendTo(rootDir).text(services.storyGetter());
             }
         }
-        else if(services.myStatusGetter()===3){
-            rootDir.text("Vyber kartu najviac vyhovujúcu popisu");
-        }
        else if(services.myStatusGetter()===4){
-            rootDir.text("Čakaj na výber karty ostatných hráčov");
+            rootDir.text("Zvyšní spoluhráči ešte stále vyberajú vhodnú kartu. Kým na nich čakáš, môžeš si prečítať niečo viac o kartách - umeleckých dielach, ktoré ti boli pridelené. Stačí na nich kliknúť.");
         }
       else if(services.myStatusGetter()===5){
-            rootDir.text("Uhádni rozprávačovu kartu");
+            rootDir.text("Podľa daného opisu vyber kartu, o ktorej si myslíš, že patrila rozprávačovi. To znamená kartu, na ktorú bol podľa teba tento opis pôvodne napísaný. Rozprávačov popis: ");
+             $("<b></b>").appendTo(rootDir).text(services.storyGetter());
         }
       else if(services.myStatusGetter()===6){
-            rootDir.text("Čakaj na ostatných hráčov");
+            rootDir.text("Zvyšní spoluhráči ešte stále vyberajú výslednú kartu. Kým na nich čakáš, môžeš si prečítať niečo viac o kartách - umeleckých dielach, ktoré ti boli pridelené. Stačí na nich kliknúť.");
         }
         
-        //todo: remove. just for debug
-//        rootDir.append(services.myStatusGetter());
     };
     
     return render;

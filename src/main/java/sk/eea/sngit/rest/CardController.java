@@ -1,13 +1,11 @@
 package sk.eea.sngit.rest;
 
-import sk.eea.sngit.rest.model.State;
-import sk.eea.sngit.rest.model.Card;
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import sk.eea.sngit.rest.model.Card;
+import sk.eea.sngit.rest.model.Turn;
 /**
  *
  * @author mme
@@ -21,25 +19,24 @@ public class CardController {
     }
     
     @RequestMapping(method=RequestMethod.POST, value="/sngit/narrator/cards")
-    public State postDescription(@RequestParam(value="user", defaultValue="") String user, 
+    public Turn.State postDescription(@RequestParam(value="user", defaultValue="") String user, 
             @RequestParam(value="cardId", defaultValue="-1") String cardId, 
             @RequestParam(value="description", defaultValue="aa") String description){
         
-        return new State(1);
+        return Turn.State.DESCRIBE_CARD;
     }
     
     @RequestMapping(method=RequestMethod.POST, value="/sngit/player/cards")
-    public State postCard(@RequestParam(value="user", defaultValue="") String user, 
+    public Turn.State postCard(@RequestParam(value="user", defaultValue="") String user, 
             @RequestParam(value="cardId", defaultValue="-1") String cardId){
         
-        return new State(1);
+        return Turn.State.WAIT_FOR_GAME;
     }
     
     @RequestMapping(method=RequestMethod.POST, value="/sngit/player/guess")
-    public State postGuess(@RequestParam(value="user", defaultValue="") String user, 
+    public Turn.State postGuess(@RequestParam(value="user", defaultValue="") String user, 
             @RequestParam(value="cardId", defaultValue="-1") String cardId){
-        
-        return new State(1);
+        return Turn.State.RESULT;
     }
     
     @RequestMapping(method=RequestMethod.GET, value="/sngit/submitted/cards")

@@ -5,6 +5,7 @@
  */
 package sk.eea.sngit.rest.dao.impl;
 
+import org.springframework.stereotype.Repository;
 import sk.eea.sngit.rest.dao.TurnDAO;
 import sk.eea.sngit.rest.model.Turn;
 
@@ -12,6 +13,7 @@ import sk.eea.sngit.rest.model.Turn;
  *
  * @author murphy
  */
+@Repository
 public class TurnDAOImpl extends GenericHibernateDAOImpl<Turn, Long> implements TurnDAO {
     
 }

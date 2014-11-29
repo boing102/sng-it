@@ -6,14 +6,14 @@
 package sk.eea.sngit.rest.dao.impl;
 
 import org.springframework.stereotype.Repository;
-import sk.eea.sngit.rest.dao.GameDAO;
-import sk.eea.sngit.rest.model.Game;
+import sk.eea.sngit.rest.dao.GameCardsDAO;
+import sk.eea.sngit.rest.model.GameCards;
 
 /**
  *
  * @author murphy
  */
 @Repository
-public class GameDAOImpl extends GenericHibernateDAOImpl<Game, Long> implements GameDAO {
+public class GameCardsDAOImpl extends GenericHibernateDAOImpl<GameCards, Long> implements GameCardsDAO {
     
 }

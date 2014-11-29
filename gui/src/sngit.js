@@ -11,7 +11,7 @@ function sngit(){
 
     var statuses = {Mrco:-1,Silvinka:-1,Palo:-1,Martin:-1,Tomas:-1,Bimbo:-1};
     var newStatus = {Mrco:0,Silvinka:0,Palo:0,Martin:0,Tomas:0,Bimbo:0};
-    var story = "Dobrý pocit z dobre vykonanej práce";
+    var story = "Nedosiahnuteľný cieľ";
     var name="";
     
     
@@ -25,11 +25,14 @@ function sngit(){
     }, 6000);
     
     
-    setInterval(function(){
-        if(statuses[name]===4){
-            newStatus = {Mrco:6,Silvinka:5,Palo:5,Martin:5,Tomas:5,Bimbo:5};
-        }
-    }, 10000);
+//    setInterval(function(){
+//        if(statuses[name]===4){
+//            newStatus = {Mrco:6,Silvinka:5,Palo:5,Martin:5,Tomas:5,Bimbo:5};
+//        }
+//        if(statuses[name]===6){
+//            newStatus = {Mrco:7,Silvinka:7,Palo:7,Martin:7,Tomas:7,Bimbo:7};
+//        }
+//    }, 10000);
     
     function isStorySaid(stats){
         for(var propertyName in stats) {
@@ -84,6 +87,16 @@ function sngit(){
                         }
                         
                     }, 1000);
+                }
+                if(st===4){
+                    setTimeout(function(){
+                        newStatus = {Mrco:6,Silvinka:5,Palo:5,Martin:5,Tomas:5,Bimbo:5};
+                    }, 10000);
+                }
+                if(st===6){
+                    setTimeout(function(){
+                        newStatus = {Mrco:7,Silvinka:7,Palo:7,Martin:7,Tomas:7,Bimbo:7};
+                    }, 10000);
                 }
                 renderAll();
             }

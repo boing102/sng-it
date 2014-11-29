@@ -34,6 +34,14 @@
                 background-color: green;
             }
             
+            .detailLink.ui-link.active_voice, .detailLink.ui-link.active_voice:hover{
+                background-color: blue;
+            }
+            
+            .detailLink.ui-link.active_narator, .detailLink.ui-link.active_narator:hover{
+                background-color: yellow;
+            }
+            
             .colcontent{
                 margin:10px;
             }
@@ -110,6 +118,21 @@
                         <p>Autor: <span class="card-creator">Fulla, Ľudovít</span></p>
                         <p>Dátum vzniku: <span class="card-created">1938/1938</span></p>
                         <p>Formát: <span class="card-format">drevorez, farebnýneznačené</span></p>
+                    </div>
+                    <div id="popupResults" data-role="popup" data-tolerance="300,150" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <h1>Výsledky</h1>
+                        <table border="0">
+                            <p>
+                                 Rozprávačovu kartu nitko neuhádol, všetci okrem rozprávača majú 2 body + 1 bod za každý získaný hlas.
+                            </p>
+                            <tr><td><b style="color: yellow">Mrc</b></td><td>2+0+0</td></tr>
+                            <tr><td><b>Palo</b></td><td>24+2+0</td></tr>
+                            <tr><td><b>Silvinka</b></td><td>32+2+1</td></tr>
+                            <tr><td><b>Martin</b></td><td>2+2+2</td></tr>
+                            <tr><td><b>Tomas</b></td><td>2+2+0</td></tr>
+                            <tr><td><b>Bimbo</b></td><td>4+2+2</td></tr>
+                        </table>
+
                     </div>
                 </div>
                 <div id="sng-players" style="display:none" >
